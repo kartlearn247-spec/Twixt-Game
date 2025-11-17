@@ -6,13 +6,14 @@ int main(){
             board[i][j]=0;
         }
     }
+    printf("Enter -1 -1 to exit\n");
     while(1){      
-        // printf(" +\n");
+        
         int i,j;
         printf("Player A, choose your move\n");
         scanf("%d %d",&i,&j);
-        if(i<0 || j<0) break;
-        while(board[i][j]!=0 || i>23 || j>23){
+        if(i==-1 && j==-1){break;}
+        while(i>23 || j>23 || i<0 || j<0 || board[i][j]!=0){
             printf("Try Again. Invalid.\n");
             scanf("%d %d",&i,&j);
         }
@@ -20,7 +21,7 @@ int main(){
         {
         printf(" ");
         for(int i=0;i<24;i++) printf(" _");
-        // printf(" +");
+        
         printf("\n");
         for(int i=0;i<24;i++){
             printf("|");
@@ -47,7 +48,7 @@ int main(){
         {
         printf(" ");
         for(int i=0;i<24;i++) printf(" _");
-        // printf(" +");
+        
         printf("\n");
         for(int i=0;i<24;i++){
             printf("|");
